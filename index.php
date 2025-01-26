@@ -4,6 +4,14 @@ session_start();
 
 $error_message = '';
 
+// Detalhes do servidor Discord via Widget
+$discord_api_url = 'https://discord.com/api/v9/invites/FZt5GpkHaT';  // URL da API de convite do servidor
+$discord_data = file_get_contents($discord_api_url);
+$discord_server = json_decode($discord_data, true);
+
+$online_members = isset($discord_server['approximate_presence_count']) ? $discord_server['approximate_presence_count'] : 'N/A';
+$total_members = isset($discord_server['approximate_member_count']) ? $discord_server['approximate_member_count'] : 'N/A';
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $playername = trim($_POST['playername']);
     $password = trim($_POST['password']);
@@ -60,6 +68,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="discord-link">
         <p>Participe do nosso servidor no Discord:</p>
         <a href="https://discord.gg/FZt5GpkHaT" target="_blank" class="discord-btn">Acessar Discord</a>
+    </div>
+
+    <!-- Detalhes do servidor Discord -->
+    <div class="discord-details">
+        <h3>Detalhes do Servidor Discord:</h3>
+        <p><strong>Total de membros:</strong> <?php echo htmlspecialchars($total_members); ?></p>
+        <p><strong>Membros online:</strong> <?php echo htmlspecialchars($online_members); ?></p>
     </div>
 
     <script src="script.js"></script>
