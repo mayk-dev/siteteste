@@ -40,20 +40,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button id="login-btn">Login</button>
-
-    <div id="login-card">
-        <h1>Login</h1>
-        <?php if (!empty($error_message)) : ?>
-            <p class="error"><?php echo htmlspecialchars($error_message); ?></p>
-        <?php endif; ?>
-        <form action="index.php" method="POST">
-            <label for="playername">Nome do Jogador:</label>
-            <input type="text" id="playername" name="playername" required>
-            <label for="password">Senha:</label>
-            <input type="password" id="password" name="password" required>
-            <button type="submit">Entrar</button>
-        </form>
+    <div id="login-container">
+        <h1>Bem-vindo ao Servidor</h1>
+        <div id="login-card">
+            <h2>Login</h2>
+            <?php if (!empty($error_message)) : ?>
+                <p class="error"><?php echo htmlspecialchars($error_message); ?></p>
+            <?php endif; ?>
+            <form action="index.php" method="POST">
+                <label for="playername">Nome do Jogador:</label>
+                <input type="text" id="playername" name="playername" required>
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Entrar</button>
+            </form>
+        </div>
+        <div id="discord-link">
+            <p>Entre no nosso servidor do Discord:</p>
+            <a href="https://discord.gg/FZt5GpkHaT" target="_blank" class="discord-button">Servidor Discord</a>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
