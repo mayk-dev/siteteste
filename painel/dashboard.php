@@ -97,8 +97,8 @@ if ($stmt->rowCount() > 0) {
 <body>
     <div class="cordefundo"></div>
     <h1>Bem-vindo ao Dashboard</h1>
-    <div><a href="quiz.php">Responda e Ganhe Coins</a></div>
-    <div><a href="game.php">Responda e Ganhe Coins 2</a></div>
+    <div><a href="jogos/quiz.php">Responda e Ganhe Coins</a></div>
+    <div><a href="jogos/game.php">Responda e Ganhe Coins 2</a></div>
 
     <p class="jogador"><strong>Jogador:</strong> <?php echo htmlspecialchars($playername); ?></p>
 
