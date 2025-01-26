@@ -1,0 +1,46 @@
+body {
+    user-select: none;
+    background-image: url('/images/'); /* Caminho da imagem */
+    background-size: 100%; /* Faz a imagem cobrir toda a área */
+    background-repeat: no-repeat; 
+    z-index: 0;
+    filter: sepia(background-image);
+   
+}
+
+
+
+.cabeca {
+   -webkit-user-drag: none;
+   position: absolute;
+   top: 70px;
+   right: 50px;
+   user-select: none;
+}
+
+.online {
+    border-radius: 10px;
+    position: absolute;
+    top: 0px;
+    background-color: black;
+    color: rgb(250, 220, 48);
+    width: 97%;
+    height: 3%;
+    text-align: center;
+    padding: 10px;
+}
+
+.moedas {
+    font-size: 20px;
+    text-decoration-style: solid;
+    position: absolute;
+    top: 4px;
+    color: rgb(250, 220, 48);
+    left: 25px;
+}
+
+* {
+   
+   color: rgb(0, 0, 0);
+
+}
