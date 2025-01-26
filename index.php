@@ -77,6 +77,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <p><strong>Membros online:</strong> <?php echo htmlspecialchars($online_members); ?></p>
     </div>
 
+    <!-- Widget Discord -->
+    <div class="discord-widget">
+        <h3>Servidor Discord - Widget</h3>
+        <iframe src="https://discord.com/widget?id=FZt5GpkHaT" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
