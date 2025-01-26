@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             if ($password === $row['password']) {
                 $_SESSION['playername'] = $playername;
-                header("Location: painel/dashboard.php");
+                header("Location: /painel");
                 exit;
             } else {
                 $error_message = 'Senha incorreta.';
