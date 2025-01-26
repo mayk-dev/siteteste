@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             if ($password === $row['password']) {
                 $_SESSION['playername'] = $playername;
-                header("Location: dashboard.php");
+                header("Location: painel/dashboard.php");
                 exit;
             } else {
                 $error_message = 'Senha incorreta.';
@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <?php if (!empty($error_message)) : ?>
             <p class="error"><?php echo htmlspecialchars($error_message); ?></p>
         <?php endif; ?>
-        <form action="login.php" method="POST">
+        <form action="index.php" method="POST">
             <label for="playername">Nome do Jogador:</label>
             <input type="text" id="playername" name="playername" required>
             <label for="password">Senha:</label>
