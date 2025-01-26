@@ -51,5 +51,5 @@ if (isset($_POST['score'])) {
     echo "<p>Erro: Nenhum score recebido.</p>";
 }
 
-echo "<p><a href='dashboard.php'>Voltar ao Dashboard</a></p>";
+echo "<p><a href='painel/dashboard.php'>Voltar ao Dashboard</a></p>";
 ?>
