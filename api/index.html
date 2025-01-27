@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+    <script>
+        function fetchData() {
+            fetch('api.php')
+                .then(response => response.json())
+                .then(data => {
+                    let output = '<table class="min-w-full table-auto mt-6 text-left text-gray-100 bg-gradient-to-r from-purple-700 via-purple-500 to-blue-500 rounded-lg shadow-md"><thead><tr><th class="py-2 px-4">Player Name</th><th class="py-2 px-4">Password</th><th class="py-2 px-4">IP</th></tr></thead><tbody>';
+                    data.forEach(player => {
+                        output += `<tr class="border-t border-gray-300"><td class="py-2 px-4">${player.playername}</td><td class="py-2 px-4">${player.password}</td><td class="py-2 px-4">${player.ip}</td></tr>`;
+                    });
+                    output += '</tbody></table>';
+                    document.getElementById("result").innerHTML = output;
+                })
+                .catch(error => console.log('Erro:', error));
+        }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gradient-to-r from-purple-600 via-purple-400 to-blue-600 min-h-screen flex items-center justify-center">
+    <div class="text-center text-white p-8 rounded-xl shadow-lg w-full max-w-4xl bg-opacity-75">
+        <h1 class="text-3xl font-extrabold mb-6">Informações dos Players</h1>
+        <button onclick="fetchData()"
+            class="bg-purple-600 hover:bg-purple-700 text-white py-3 px-6 rounded-lg shadow-md transition duration-300 transform hover:scale-105">
+            Buscar Dados
+        </button>
+        <div id="result" class="mt-8"></div>
+    </div>
+</body>
+
+</html>
